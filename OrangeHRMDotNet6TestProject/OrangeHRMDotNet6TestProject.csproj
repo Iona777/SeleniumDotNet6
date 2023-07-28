@@ -29,11 +29,10 @@
 
   <ItemGroup>
     <Folder Include="Features\" />
-    <Folder Include="Pages\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="appsettings..json">
+    <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

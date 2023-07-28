@@ -8,6 +8,7 @@ C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProj
 C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\bin\Debug\net6.0\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\bin\Debug\net6.0\appsettings.json
 C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\bin\Debug\net6.0\OrangeHRMDotNet6TestProject.deps.json
 C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\bin\Debug\net6.0\OrangeHRMDotNet6TestProject.runtimeconfig.json
 C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\bin\Debug\net6.0\OrangeHRMDotNet6TestProject.dll
@@ -127,4 +128,3 @@ C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProj
 C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\obj\Debug\net6.0\OrangeHRMDotNet6TestProject.pdb
 C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\obj\Debug\net6.0\OrangeHRMDotNet6TestProject.genruntimeconfig.cache
 C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\obj\Debug\net6.0\ref\OrangeHRMDotNet6TestProject.dll
-C:\Users\gregm\source\repos\OrangeHRMDotNet6TestProject\OrangeHRMDotNet6TestProject\bin\Debug\net6.0\appsettings..json

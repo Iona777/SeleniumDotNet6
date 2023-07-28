@@ -11,9 +11,10 @@ namespace OrangeHRMDotNet6TestProject.Utilities
     public class ConfigHelper
     {
         private static string configFile = "appsettings.json";
+                                            
         //Constructor - does not need one, just use default
 
-   
+
         /*
          * Allows us to read the specified config file
          * Make sure that you have optional: false,

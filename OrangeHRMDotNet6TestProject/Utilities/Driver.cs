@@ -40,7 +40,7 @@ namespace OrangeHRMDotNet6TestProject.Utilities
                     driver = new InternetExplorerDriver();
                     driver.Manage().Window.Maximize();
                     break;
-                    default: throw new ArgumentException("Unknown Browser Selected");
+                    default: throw new ArgumentException("Unknown Browser Selected"+ selectedBrowser.ToUpper());
                     break;
             }
         }
