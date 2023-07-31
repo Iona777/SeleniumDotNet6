@@ -83,12 +83,28 @@ namespace OrangeHRMDotNet6TestProject.Utilities
             return browser;
         }
 
-
         public static string GetBaseURL()
         {
             var baseURL = GetValueFromConfigKey("BaseURL");
             return baseURL;
         }
+
+        /// <summary>
+        /// Swithces focus to the first frame
+        /// </summary>
+        public static void SwitchWindowFirstFrame()
+        {
+            Driver.driver.SwitchTo().Window(Driver.driver.WindowHandles.First());
+        }
+
+        /// <summary>
+        /// Switches focus to the last frame
+        /// </summary>
+        public static void SwitchWindowLastFrame()
+        {
+            Driver.driver.SwitchTo().Window(Driver.driver.WindowHandles.Last()); 
+        }
+
 
         /*
          * Don’t call it Quit() as you could end up calling it in an endless loop if you call 
@@ -99,6 +115,5 @@ namespace OrangeHRMDotNet6TestProject.Utilities
             driver.Quit();
         }
            
-
     }
 }

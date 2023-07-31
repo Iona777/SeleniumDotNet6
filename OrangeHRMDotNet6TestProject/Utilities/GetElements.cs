@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.DevTools.V112.DOM;
 
 namespace OrangeHRMDotNet6TestProject.Utilities
 {
@@ -21,11 +22,25 @@ namespace OrangeHRMDotNet6TestProject.Utilities
         /// <returns>IWebElement</returns>
         public static IWebElement GetClickablElement(By elementLocator, int? waitSeconds = null)
         {
+            //Sets the seconds parameter used in creating the WebDriverWait to the value of waitSeconds
+            //if supplied, or defaults to webDriverTimout value if not supplied. 
             int seconds = waitSeconds ?? webDriverTimeout;
-
             WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(seconds));
 
             return wait.Until(ExpectedConditions.ElementToBeClickable(elementLocator));
+        }
+
+        // <summary>
+        /// Waits for, then returns, a visible element
+        /// </summary>
+        /// <param name="elementLocator">Used to locate the element, e.g. By.Id("xyz")</param>
+        /// <returns>IWebElement</returns>
+        public static IWebElement GetVisibleElement(By elementLocator, int? waitSeconds = null)
+        {
+            int seconds = waitSeconds ?? webDriverTimeout;
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(seconds));
+
+            return wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
         }
 
      

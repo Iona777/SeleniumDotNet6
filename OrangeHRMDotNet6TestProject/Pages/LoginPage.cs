@@ -8,6 +8,7 @@ using OpenQA.Selenium; //Need this for By to work
 using OrangeHRMDotNet6TestProject.Utilities; //Need this to access Driver class amd the other Utilities classes
 //Or Can use something like this, and will not have to include the class name when calling the method
 using static OrangeHRMDotNet6TestProject.Utilities.SelectElements;
+using static OrangeHRMDotNet6TestProject.Utilities.ManipulateElements;
 using static OrangeHRMDotNet6TestProject.Utilities.Driver;
 
 namespace OrangeHRMDotNet6TestProject.Pages
