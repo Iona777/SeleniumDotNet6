@@ -39,6 +39,9 @@ namespace OrangeHRMDotNet6TestProject.Steps
         {
             _theLoginPage.EnterUserName(username);
             _theLoginPage.EnterPassword(password);
+            
+            System.Diagnostics.Debug.WriteLine("IN LOGIN PAGE");
+
             _theLoginPage.ClickOnLoginButton();
         }
 
@@ -49,8 +52,16 @@ namespace OrangeHRMDotNet6TestProject.Steps
             
             //Pause so we can see the page
             Driver.Pause(2000);
+
         }
 
+        [Then(@"I click on Leave from the menu")]
+        public void ThenIClickOnLeaveFromTheMenu()
+        {
+            _theDashboardPage.ClickOnNthListElement(2);
+            //Pause so we can see the page
+            Driver.Pause(2000);
+        }
 
     }
 }

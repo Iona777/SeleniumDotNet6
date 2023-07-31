@@ -123,6 +123,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.Then("the dashboard page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 10
+ testRunner.And("I click on Leave from the menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

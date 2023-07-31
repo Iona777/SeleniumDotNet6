@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.DevTools.V112.DOM;
+using System.Collections.ObjectModel;
 
 namespace OrangeHRMDotNet6TestProject.Utilities
 {
@@ -43,6 +44,27 @@ namespace OrangeHRMDotNet6TestProject.Utilities
             return wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
         }
 
-     
+        /// <summary>
+        /// Will return the element of the list of items by given element locator and index
+        /// </summary>
+        /// <param name="elementLocator">Used to locate the element, e.g. By.Id("xyz")</param>
+        /// /// <param name="index">Index in the list</param>
+        /// <returns></returns>
+        public static IWebElement GetListItemByIndex(By elementLocator, int index)
+        {
+            //Could just call this var and let C# workout what sort of variable type it needs to be
+            ReadOnlyCollection<IWebElement> listItems = Driver.driver.FindElements(elementLocator);
+
+            //Just a check to see if we found them- can be removed later
+            foreach (IWebElement element in listItems)
+            {
+
+                System.Diagnostics.Debug.WriteLine(element.Text);
+                string elementText = element.Text;
+            }
+
+            return listItems[index];
+        }
+
     }
 }
