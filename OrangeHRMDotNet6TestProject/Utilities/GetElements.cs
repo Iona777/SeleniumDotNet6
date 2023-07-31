@@ -9,15 +9,10 @@ using System.Threading.Tasks;
 
 namespace OrangeHRMDotNet6TestProject.Utilities
 {
-    public class GetElements
+    public static class GetElements
     {
-        public static int webDriverTimeout;
+        public static int webDriverTimeout = Driver.GetTimeoutSeconds();
         
-        public GetElements()
-        {
-            webDriverTimeout = Driver.GetTimeoutSeconds();
-        }
-
         /// <summary>
         /// Waits for then returns a clickable web element
         /// </summary>

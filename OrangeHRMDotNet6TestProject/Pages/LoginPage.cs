@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 using OpenQA.Selenium; //Need this for By to work
 using OrangeHRMDotNet6TestProject.Utilities; //Need this to access Driver class amd the other Utilities classes
+//Or Can use something like this, and will not have to include the class name when calling the method
+using static OrangeHRMDotNet6TestProject.Utilities.SelectElements;
+using static OrangeHRMDotNet6TestProject.Utilities.Driver;
 
 namespace OrangeHRMDotNet6TestProject.Pages
 {
@@ -25,22 +28,22 @@ namespace OrangeHRMDotNet6TestProject.Pages
         //Methods
         public void GotoLoginPage()
         {
-            Driver.NavigateTo(Driver.RootURL);
+            NavigateTo(Driver.RootURL);
         }
 
         public void EnterUserName(string userName)
         {
-          SelectElements.EnterText(_userNameLocator, userName,10);
+            EnterText(_userNameLocator, userName,10);
         }
 
         public void EnterPassword(string password)
         {
-            SelectElements.EnterText(_passwordLocator,password, 5);
+            EnterText(_passwordLocator,password, 5);
         }
 
         public void ClickOnLoginButton()
         {
-            SelectElements.ClickOnElement(_loginbButtonLocator);
+            ClickOnElement(_loginbButtonLocator);
         }
 
     }
