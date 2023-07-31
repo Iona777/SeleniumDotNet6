@@ -1,6 +1,6 @@
 ﻿Feature: Login
 
-A short summary of the feature
+I want to login to the OrangeHRM site
 
 @tag1
 Scenario Outline: Log in to the OrangeHRM site

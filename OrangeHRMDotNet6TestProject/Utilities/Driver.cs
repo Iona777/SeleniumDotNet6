@@ -9,10 +9,8 @@ using OpenQA.Selenium.Support.UI;
 
 namespace OrangeHRMDotNet6TestProject.Utilities
 {
-    internal class Driver
+    public class Driver
     {
-
-
 
         //Not sure which of these to use. My notes have IWebDriver, VS auto suggests WebDriver
         //public static WebDriver driver;

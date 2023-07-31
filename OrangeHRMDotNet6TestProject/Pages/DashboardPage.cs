@@ -7,20 +7,19 @@ using System.Threading.Tasks;
 
 namespace OrangeHRMDotNet6TestProject.Pages
 {
-    public class DashboardPage: BasePage
+    public class DashboardPage
     {
         //Constructor
-        //Don't need one as inheriting from Basepage.
+        public DashboardPage() { }  
         //May need an empty one (NoArgConstructor, does that exist in C#?) when refactoring without Base page
 
         string DashboardTitle = "OrangeHRM";
 
-        //Webelemnt locators
+        //WebElement locators
 
         //Methods
         public void CheckTitle()
         {
-
             Assert.AreEqual(Driver.driver.Title,DashboardTitle);
         }
     }
