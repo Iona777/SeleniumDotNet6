@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.DevTools.V112.DOM;
 using System.Collections.ObjectModel;
+using OpenQA.Selenium.DevTools.V112.Debugger;
+using System.Linq.Expressions;
 
 namespace OrangeHRMDotNet6TestProject.Utilities
 {
@@ -43,6 +45,59 @@ namespace OrangeHRMDotNet6TestProject.Utilities
 
             return wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
         }
+
+
+        public static ReadOnlyCollection<IWebElement> GetAllVisibleElements(By by, int minCount = 1, bool retry = true, int? waitSeconds = null)
+        {
+            int seconds = waitSeconds ?? webDriverTimeout;
+            WebDriverWait wait = new WebDriverWait(Driver.driver,TimeSpan.FromSeconds(seconds));
+
+            ReadOnlyCollection<IWebElement> elementList;
+
+            try
+            {
+                elementList = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(by));
+
+                if (elementList.Count < minCount) 
+                {
+                    //Sometimes it will just not get all the elements in time, so  give it another chance.
+                    Driver.Pause(5000);
+                    elementList = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(by));
+                }
+
+                return elementList;
+                
+            }
+            catch (Exception e)
+            {
+
+                if (retry) 
+                {
+                    try
+                    {
+                        elementList = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(by));
+
+                        if (elementList.Count < minCount)
+                        {
+                            //Sometimes it will just not get all the elements in time, so  give it another chance.
+                            Driver.Pause(5000);
+                            elementList = wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(by));
+                        }
+
+                        return elementList;
+                    }
+                    catch (Exception)
+                    {
+                        //Failed again, throw original error
+                        throw new Exception($"Cannot find element via: {by}");
+                    }
+                }
+                else { throw; };
+            }
+
+
+        }
+
 
         /// <summary>
         /// Will return the element of the list of items by given element locator and index
