@@ -22,13 +22,13 @@ namespace OrangeHRMDotNet6TestProject.Utilities
         /// <param name="tagName">Tag name to idenfify the table rows. Usually "tr" but could vary</param>
         /// <param name="nRow">Index of the row to return</param>
         /// <returns></returns>
-        public static IWebElement GetTableNthRow(By by, String tagName,int nRow)
+        public static IWebElement GetTableNthRow(By by, String tagName, int nRow)
         {
             var tableElement = GetVisibleElement(by);
             Assert.IsNotNull(tableElement, $"Did not find the table given by: {by}");
             Assert.AreEqual("table", tableElement.TagName, $"Element given by: {by} is not a table!");
 
-
+            
             //Alternatively:
             //Tag name may vary so use paramenter. minCount and waitSeconds will have default values if not specified
             //Since we are not giving values for ALL the parameters (retry not given), we need to give the parameter in t
@@ -83,7 +83,7 @@ namespace OrangeHRMDotNet6TestProject.Utilities
         }
 
 
-        public static IWebElement GetTableNthRowAndColumn(By by, string rowTagName,string colTagName,int nRow, int nCol)
+        public static IWebElement GetTableNthRowAndColumn(By by, string rowTagName, string colTagName, int nRow, int nCol)
         {
             var tableElement = GetVisibleElement(by);
             Assert.IsNotNull(tableElement, $"Did not find the table given by: {by}");
@@ -92,7 +92,7 @@ namespace OrangeHRMDotNet6TestProject.Utilities
             //Tag names may vary so use paramenters
             var rows = tableElement.FindElements(By.TagName(rowTagName));
             var nthRow = rows[nRow];
-           
+
             var columns = nthRow.FindElements(By.TagName(colTagName));
             var nthRowCol = columns[nCol];
 
@@ -102,17 +102,17 @@ namespace OrangeHRMDotNet6TestProject.Utilities
         /// <summary>
         /// Checks to see if all the displayed columns in the table contain the expected text
         /// </summary>
-        /// <param name="by">Used to locate the element, e.g. By.Id("xyz")</param>
-        /// <param name="colTagName">Tag name to identify columns</param>
+        /// <param name="tableBy">Used to locate the element, e.g. By.Id("xyz")</param>
+        /// <param name="colBy">Tag name to identify columns</param>
         /// <param name="expectedText">Text each column should equal</param>
         /// <returns></returns>
-        public static bool AllNthColumsContainSpecifiedText(By by, string colTagName, string expectedText)
+        public static bool AllColumsEqualSpecifiedText(By tableBy, By colBy, string expectedText)
         {
             bool allColumnsEqualText = true;
-            var tableElement = GetVisibleElement(by);
-            var columns = tableElement.FindElements(By.TagName(colTagName));
+            var tableElement = GetVisibleElement(tableBy);
+            var columns = tableElement.FindElements(colBy);
 
-            foreach ( var column in columns ) 
+            foreach (var column in columns)
             {
                 if (column.Displayed)
                 {
@@ -125,6 +125,23 @@ namespace OrangeHRMDotNet6TestProject.Utilities
             }
 
             return allColumnsEqualText;
+        }
+
+        // <summary>
+        /// Checks to see if all the nth column in the tables contain the expected text
+        /// </summary>
+        /// <param name="tableBy">Used to locate the element, e.g. By.Id("xyz")</param>
+        /// <param name="colBy">Tag name to identify columns</param>
+        /// <param name="expectedText">Text each column should equal</param>
+        /// <returns></returns>
+        public static bool NthColumEqualsSpecifiedText(By tableBy, By colBy, int columnIndex, string expectedText)
+        {
+            
+            var tableElement = GetVisibleElement(tableBy);
+            var columns = tableElement.FindElements(colBy);
+            string nthColumnText = columns[columnIndex].Text;
+
+            return nthColumnText.Equals(expectedText);
         }
     }
 }

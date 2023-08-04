@@ -121,5 +121,44 @@ namespace OrangeHRMDotNet6TestProject.Utilities
             return listItems[index];
         }
 
+
+        public static IWebElement GetElementByHref(string href, int? waitSeconds)
+        {
+            int seconds = waitSeconds ?? webDriverTimeout;
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(seconds));
+
+            return wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("[href*='" + href + "']")));
+        }
+
+        public static IWebElement GetElementByVisibleTextAdmin(string searchText, int? waitSeconds)
+        {
+            int seconds = waitSeconds ?? webDriverTimeout;
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(seconds));
+
+            string xpath1 = ".//*[contains(text(),'" + searchText + "')]";
+            string xpath2 = "//*[contains(., 'Admin')]";
+
+            //return wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(".//*[contains(text(),'" + searchText + "')]")));
+            //return wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[contains(., 'searchText')]")));
+            return wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[contains(., 'Admin')]")));
+
+            
+        }
+
+        public static IWebElement GetElementByVisibleTextCEO(string searchText, int? waitSeconds)
+        {
+            int seconds = waitSeconds ?? webDriverTimeout;
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(seconds));
+
+            string xpath1 = ".//*[contains(text(),'" + searchText + "')]";
+            string xpath2 = "//*[contains(., 'Admin')]";
+
+            //return wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(".//*[contains(text(),'" + searchText + "')]")));
+            //return wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[contains(., 'searchText')]")));
+            return wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[contains(., 'Chief Executive Officer')]")));
+
+
+        }
+
     }
 }

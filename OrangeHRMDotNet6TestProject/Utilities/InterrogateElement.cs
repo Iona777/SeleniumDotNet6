@@ -21,7 +21,7 @@ namespace OrangeHRMDotNet6TestProject.Utilities
         /// </summary>
         /// <param name="elementLocator">Used to locate the element, e.g. By.Id("xyz")</param>
         /// <returns>boolean</returns>
-        public static bool IsElementDisplayed(By elementLocator, int? waitSeconds = null)
+        public static bool IsElementDisplayed(By elementLocator)
         {
             try
             {

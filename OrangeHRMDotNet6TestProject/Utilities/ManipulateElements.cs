@@ -22,5 +22,16 @@ namespace OrangeHRMDotNet6TestProject.Utilities
         {
             GetClickablElement(elementLocator).SendKeys(inputText);
         }
+
+        /// <summary>
+        /// Waits for a given element to be clickable and then clicks on it
+        /// </summary>
+        /// <param name="elementLocator">Used to locate the element, e.g. By.Id("xyz")</param>
+        /// <param name="waitSeconds">Time to wait before timeout</param>
+        public static void ClickOnElement(By elementLocator,int? waitSeconds = null)
+        {
+            GetClickablElement(elementLocator).Click();
+        }
+
     }
 }
