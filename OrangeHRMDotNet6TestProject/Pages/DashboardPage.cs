@@ -81,19 +81,6 @@ namespace OrangeHRMDotNet6TestProject.Pages
         }
 
 
-        public void SelectUserRole(string userRole)
-        {
-            IWebElement dropdownElement = GetClickablElement(_userRoleLocator,2);
-            dropdownElement.Click();
-            //IWebElement dropdownValue = GetClickablElement(_userRoleEssValueLocator, 2);
-
-            EnterText(_userRoleEssValueLocator, "ESS");
-            
-
-            Driver.Pause(2000);
-        }
-
-
         public void ClickOnSearchButton()
         {
             Driver.Pause(2000);

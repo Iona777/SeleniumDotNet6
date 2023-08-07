@@ -40,11 +40,6 @@ namespace OrangeHRMDotNet6TestProject.Steps
             Driver.Pause(2000);
         }
 
-        [When(@"I filter on user role ""([^""]*)""")]
-        public void WhenIFilterOnUserRole(string userRole)
-        {
-            _theDashboardPage.SelectUserRole(userRole);
-        }
 
         [Then(@"the Username column in all the return rows equal ""([^""]*)""")]
         public void ThenTheUsernameColumnInAllTheReturnRowsEqual(string expectedValue)
@@ -57,12 +52,6 @@ namespace OrangeHRMDotNet6TestProject.Steps
         public void WhenISelectTheThePIMMenuItem()
         {
             _theDashboardPage.ClickOnPimMenuItem();
-        }
-
-        [When(@"I get the options list")]
-        public void WhenIGetTheOptionsList()
-        {
-            _thePimPage.GetItems();
         }
 
 
