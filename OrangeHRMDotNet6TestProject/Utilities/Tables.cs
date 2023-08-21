@@ -15,11 +15,11 @@ namespace OrangeHRMDotNet6TestProject.Utilities
     {
         /// <summary>
         /// Waits for the table webElement using the given By.
-        /// Returns the row and index nRow
+        /// Returns the row at index nRow
         /// NOTE: This is zero referenced (although for some tables, row 0 is the headings)
         /// </summary>
         /// <param name="by">Used to locate the element, e.g. By.Id("xyz")</param>
-        /// <param name="tagName">Tag name to idenfify the table rows. Usually "tr" but could vary</param>
+        /// <param name="tagName">Tag name to identify the table rows. Usually "tr" but could vary</param>
         /// <param name="nRow">Index of the row to return</param>
         /// <returns></returns>
         public static IWebElement GetTableNthRow(By by, String tagName, int nRow)
@@ -54,7 +54,7 @@ namespace OrangeHRMDotNet6TestProject.Utilities
 
         /// <summary>
         /// Waits for the table webElement using the given By.
-        /// Returns the column and index nCol
+        /// Returns the column at index nCol
         /// NOTE: This is zero referenced 
         /// </summary>
         /// <param name="by">Used to locate the element, e.g. By.Id("xyz")</param>
