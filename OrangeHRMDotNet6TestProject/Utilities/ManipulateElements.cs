@@ -20,7 +20,7 @@ namespace OrangeHRMDotNet6TestProject.Utilities
         /// <param name="waitSeconds">Time to wait before timeout</param>
         public static void EnterText(By elementLocator, string inputText, int? waitSeconds = null)
         {
-            GetClickablElement(elementLocator).SendKeys(inputText);
+            GetClickablElement(elementLocator, waitSeconds).SendKeys(inputText);
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace OrangeHRMDotNet6TestProject.Utilities
         /// <param name="waitSeconds">Time to wait before timeout</param>
         public static void ClickOnElement(By elementLocator,int? waitSeconds = null)
         {
-            GetClickablElement(elementLocator).Click();
+            GetClickablElement(elementLocator, waitSeconds).Click();
         }
 
     }
