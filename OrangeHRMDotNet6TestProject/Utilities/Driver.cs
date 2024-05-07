@@ -66,8 +66,8 @@ namespace OrangeHRMDotNet6TestProject.Utilities
 
         public static string GetValueFromConfigKey(string key)
         {
-            var settings = ConfigHelper.GetConfig();
-            return settings[key];
+            var property = ConfigHelper.GetProperty(key);
+            return property;
         }
 
         public static int GetTimeoutSeconds()

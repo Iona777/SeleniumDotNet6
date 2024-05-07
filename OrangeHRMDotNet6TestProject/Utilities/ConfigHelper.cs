@@ -1,34 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Microsoft.Extensions.Configuration;
+
 
 namespace OrangeHRMDotNet6TestProject.Utilities
 {
-    public class ConfigHelper
+    public static class ConfigHelper
     {
-        private static string configFile = "appsettings.json";
-                                            
-        //Constructor - does not need one, just use default
+        private static IConfigurationRoot configuration;
 
-
-        /*
-         * Allows us to read the specified config file
-         * Make sure that you have optional: false,
-            This means that it will alert you if it cannot find the config file. Helpful if you have a type or forgot to set to Copy Always. 
-            Otherwise it will keep returning null and you won’t know why!
-         */
-        public static IConfiguration GetConfig()
+      /*
+        Constructor - it will build the config every time it is required. I think that is what 'reloadOnChange: true' is for.
+        Allows us to read the specified config file
+        Make sure that you have optional: false,
+        This means that it will alert you if it cannot find the config file. Helpful if you have a type or forgot to set to Copy Always. 
+        Otherwise it will keep returning null and you won’t know why!
+        */
+        static ConfigHelper()
         {
             var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(configFile, optional: false, reloadOnChange: true);
-            return builder.Build();
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory) // Set the base path to the directory containing your appsettings.json
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+            configuration = builder.Build();
         }
 
-        
+        public static string GetProperty(string key)
+        {
+            // Gets property from config file for the given key
+            string fromConfigFile = configuration[key];
+
+            // Checks for property in environment. If not found, returns config file value as default
+            return Environment.GetEnvironmentVariable(key) ?? fromConfigFile;
+        }
     }
 }
+

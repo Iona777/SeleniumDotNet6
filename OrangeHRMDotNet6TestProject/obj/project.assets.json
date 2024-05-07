@@ -800,7 +800,7 @@
           "buildTransitive/Selenium.WebDriver.targets": {}
         }
       },
-      "Selenium.WebDriver.ChromeDriver/115.0.5790.10200": {
+      "Selenium.WebDriver.ChromeDriver/124.0.6367.9100": {
         "type": "package",
         "build": {
           "build/Selenium.WebDriver.ChromeDriver.targets": {}
@@ -3248,13 +3248,14 @@
         "selenium.webdriver.nuspec"
       ]
     },
-    "Selenium.WebDriver.ChromeDriver/115.0.5790.10200": {
-      "sha512": "2YLCCJpAORYwtUxs/zKscVZiAY++Bb2Ze8eeFa22fjKiGHgvsUwotHUSoze7O72kPM8lzZTwTo0vOlX4HqrYrA==",
+    "Selenium.WebDriver.ChromeDriver/124.0.6367.9100": {
+      "sha512": "7reJ4ntq+LcvoW606W9xXYT4i4Uiy5Q0D58Ro09ITTerrHJocI7pF5G/0b9jx9DQJT5djhTfr1WqZK3RDjOCMQ==",
       "type": "package",
-      "path": "selenium.webdriver.chromedriver/115.0.5790.10200",
+      "path": "selenium.webdriver.chromedriver/124.0.6367.9100",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "LICENSE",
         "README.md",
         "build/DefinePropertiesChromeDriver.targets",
         "build/Selenium.WebDriver.ChromeDriver.targets",
@@ -3267,7 +3268,7 @@
         "driver/win32/LICENSE.chromedriver",
         "driver/win32/chromedriver.exe",
         "nupkg-icon.png",
-        "selenium.webdriver.chromedriver.115.0.5790.10200.nupkg.sha512",
+        "selenium.webdriver.chromedriver.124.0.6367.9100.nupkg.sha512",
         "selenium.webdriver.chromedriver.nuspec"
       ]
     },
@@ -6373,7 +6374,7 @@
       "Microsoft.NET.Test.Sdk >= 17.5.0",
       "Selenium.Support >= 4.10.0",
       "Selenium.WebDriver >= 4.10.0",
-      "Selenium.WebDriver.ChromeDriver >= 115.0.5790.10200",
+      "Selenium.WebDriver.ChromeDriver >= 124.0.6367.9100",
       "SeleniumExtras.WaitHelpers >= 1.0.2",
       "SpecFlow >= 3.9.74",
       "SpecFlow.MsTest >= 3.9.74",
@@ -6462,7 +6463,7 @@
           },
           "Selenium.WebDriver.ChromeDriver": {
             "target": "Package",
-            "version": "[115.0.5790.10200, )"
+            "version": "[124.0.6367.9100, )"
           },
           "SeleniumExtras.WaitHelpers": {
             "target": "Package",

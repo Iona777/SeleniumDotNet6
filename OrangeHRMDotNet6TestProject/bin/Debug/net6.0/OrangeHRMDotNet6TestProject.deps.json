@@ -17,7 +17,7 @@
           "Microsoft.NET.Test.Sdk": "17.5.0",
           "Selenium.Support": "4.10.0",
           "Selenium.WebDriver": "4.10.0",
-          "Selenium.WebDriver.ChromeDriver": "115.0.5790.10200",
+          "Selenium.WebDriver.ChromeDriver": "124.0.6367.9100",
           "SeleniumExtras.WaitHelpers": "1.0.2",
           "SpecFlow": "3.9.74",
           "SpecFlow.MsTest": "3.9.74",
@@ -551,7 +551,7 @@
           }
         }
       },
-      "Selenium.WebDriver.ChromeDriver/115.0.5790.10200": {},
+      "Selenium.WebDriver.ChromeDriver/124.0.6367.9100": {},
       "SeleniumExtras.WaitHelpers/1.0.2": {
         "dependencies": {
           "Selenium.WebDriver": "4.10.0"
@@ -1480,12 +1480,12 @@
       "path": "selenium.webdriver/4.10.0",
       "hashPath": "selenium.webdriver.4.10.0.nupkg.sha512"
     },
-    "Selenium.WebDriver.ChromeDriver/115.0.5790.10200": {
+    "Selenium.WebDriver.ChromeDriver/124.0.6367.9100": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2YLCCJpAORYwtUxs/zKscVZiAY++Bb2Ze8eeFa22fjKiGHgvsUwotHUSoze7O72kPM8lzZTwTo0vOlX4HqrYrA==",
-      "path": "selenium.webdriver.chromedriver/115.0.5790.10200",
-      "hashPath": "selenium.webdriver.chromedriver.115.0.5790.10200.nupkg.sha512"
+      "sha512": "sha512-7reJ4ntq+LcvoW606W9xXYT4i4Uiy5Q0D58Ro09ITTerrHJocI7pF5G/0b9jx9DQJT5djhTfr1WqZK3RDjOCMQ==",
+      "path": "selenium.webdriver.chromedriver/124.0.6367.9100",
+      "hashPath": "selenium.webdriver.chromedriver.124.0.6367.9100.nupkg.sha512"
     },
     "SeleniumExtras.WaitHelpers/1.0.2": {
       "type": "package",
