@@ -15,14 +15,27 @@ namespace OrangeHRMDotNet6TestProject.Utilities
         This means that it will alert you if it cannot find the config file. Helpful if you have a type or forgot to set to Copy Always. 
         Otherwise it will keep returning null and you won’t know why!
         */
-        static ConfigHelper()
-        {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory) // Set the base path to the directory containing your appsettings.json
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
-            configuration = builder.Build();
-        }
+        	        
+		    static ConfigHelper()
+            {
+                try 
+                {
+
+                    var builder = new ConfigurationBuilder()
+                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory) // Set the base path to the directory containing your appsettings.json
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+                    configuration = builder.Build();
+                }
+                catch (IOException e) 
+                {
+                    throw e;
+                }
+
+            }
+        
+        
 
         public static string GetProperty(string key)
         {
